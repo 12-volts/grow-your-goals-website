@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import "./globals.css";
 import React from "react";
+import Navbar from "../components/Navbar";
 
 export const metadata: Metadata = {
   title: "Grow Your Goals - Gamified Virtual Garden & Productivity",
@@ -13,24 +14,9 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="en">
+    <html lang="en" className="scroll-smooth">
       <body className="bg-earth-beige-50 text-earth-brown-900 antialiased min-h-screen flex flex-col selection:bg-earth-moss-200">
-        <header className="sticky top-0 z-50 bg-earth-beige-100/80 backdrop-blur-md border-b border-earth-beige-200">
-          <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 h-16 flex items-center justify-between">
-            <div className="flex items-center space-x-2">
-              <span className="text-2xl">🌱</span>
-              <a href="/" className="font-bold text-xl text-earth-moss-600 tracking-tight hover:text-earth-moss-500 transition-colors">
-                Grow Your Goals
-              </a>
-            </div>
-            <nav className="flex items-center space-x-6 text-sm font-medium text-earth-brown-600">
-              <a href="/#pillars" className="hover:text-earth-moss-500 transition-colors">Pillars</a>
-              <a href="/#gamification" className="hover:text-earth-moss-500 transition-colors">Gamification</a>
-              <a href="/#shop" className="hover:text-earth-moss-500 transition-colors">Seed Shop</a>
-              <a href="/privacy" className="hover:text-earth-moss-500 transition-colors">Privacy Policy</a>
-            </nav>
-          </div>
-        </header>
+        <Navbar />
 
         <main className="flex-grow">
           {children}
