@@ -157,76 +157,239 @@ export default function Home() {
           <h2 className="text-3xl font-bold text-earth-brown-600">The Seed Shop</h2>
           <p className="text-earth-brown-500 mt-2">Unlock unique seeds using your hard-earned Gold to expand your agricultural empire.</p>
         </div>
-        <div className="overflow-x-auto rounded-2xl border border-earth-beige-200 shadow-sm bg-white">
-          <table className="w-full text-left border-collapse text-sm">
-            <thead>
-              <tr className="bg-earth-beige-100 text-earth-brown-600 border-b border-earth-beige-200 font-semibold">
-                <th className="p-4">Plant Name</th>
-                <th className="p-4">Pillar Category</th>
-                <th className="p-4">Requirement Type</th>
-                <th className="p-4">Target Requirement</th>
-                <th className="p-4 text-amber-600">Harvest Gold</th>
-                <th className="p-4 text-emerald-600">Harvest EXP</th>
-                <th className="p-4">Unlock Price</th>
-              </tr>
-            </thead>
-            <tbody className="divide-y divide-earth-beige-200 text-earth-brown-500">
-              <tr>
-                <td className="p-4 font-bold text-earth-brown-600">🌻 Sprout Sunflower</td>
-                <td className="p-4">Health</td>
-                <td className="p-4">Action</td>
-                <td className="p-4">5 Actions</td>
-                <td className="p-4 font-semibold text-amber-600">25 Gold</td>
-                <td className="p-4 font-semibold text-emerald-600">50 EXP</td>
-                <td className="p-4"><span className="text-xs font-semibold px-2 py-0.5 rounded bg-earth-moss-100 text-earth-moss-600">Free (Starter)</span></td>
-              </tr>
-              <tr>
-                <td className="p-4 font-bold text-earth-brown-600">🍀 Vitality Clover</td>
-                <td className="p-4">Health</td>
-                <td className="p-4">Time</td>
-                <td className="p-4">30 Mins</td>
-                <td className="p-4 font-semibold text-amber-600">40 Gold</td>
-                <td className="p-4 font-semibold text-emerald-600">80 EXP</td>
-                <td className="p-4">100 Gold</td>
-              </tr>
-              <tr>
-                <td className="p-4 font-bold text-earth-brown-600">🌱 Coin Sprout</td>
-                <td className="p-4">Finance</td>
-                <td className="p-4">Action</td>
-                <td className="p-4">3 Actions</td>
-                <td className="p-4 font-semibold text-amber-600">50 Gold</td>
-                <td className="p-4 font-semibold text-emerald-600">60 EXP</td>
-                <td className="p-4"><span className="text-xs font-semibold px-2 py-0.5 rounded bg-earth-moss-100 text-earth-moss-600">Free (Starter)</span></td>
-              </tr>
-              <tr>
-                <td className="p-4 font-bold text-earth-brown-600">🌳 Golden Tree</td>
-                <td className="p-4">Finance</td>
-                <td className="p-4">Time</td>
-                <td className="p-4">60 Mins</td>
-                <td className="p-4 font-semibold text-amber-600">120 Gold</td>
-                <td className="p-4 font-semibold text-emerald-600">150 EXP</td>
-                <td className="p-4">250 Gold</td>
-              </tr>
-              <tr>
-                <td className="p-4 font-bold text-earth-brown-600">🪻 Focus Lavender</td>
-                <td className="p-4">Productivity</td>
-                <td className="p-4">Time</td>
-                <td className="p-4">45 Mins</td>
-                <td className="p-4 font-semibold text-amber-600">60 Gold</td>
-                <td className="p-4 font-semibold text-emerald-600">100 EXP</td>
-                <td className="p-4"><span className="text-xs font-semibold px-2 py-0.5 rounded bg-earth-moss-100 text-earth-moss-600">Free (Starter)</span></td>
-              </tr>
-              <tr>
-                <td className="p-4 font-bold text-earth-brown-600">☕ Coffee Bush</td>
-                <td className="p-4">Productivity</td>
-                <td className="p-4">Action</td>
-                <td className="p-4">8 Actions</td>
-                <td className="p-4 font-semibold text-amber-600">90 Gold</td>
-                <td className="p-4 font-semibold text-emerald-600">140 EXP</td>
-                <td className="p-4">200 Gold</td>
-              </tr>
-            </tbody>
-          </table>
+
+        <div className="space-y-12">
+          {/* Health Category */}
+          <div>
+            <h3 className="text-xl font-bold text-earth-brown-600 mb-4 flex items-center gap-2">
+              <span className="w-8 h-8 rounded-lg bg-emerald-100 flex items-center justify-center text-sm border border-emerald-200">🟢</span>
+              Health Pillar Plants
+            </h3>
+            <div className="overflow-x-auto rounded-2xl border border-earth-beige-200 shadow-sm bg-white">
+              <table className="w-full text-left border-collapse text-sm">
+                <thead>
+                  <tr className="bg-earth-beige-100 text-earth-brown-600 border-b border-earth-beige-200 font-semibold">
+                    <th className="p-4">Plant Name</th>
+                    <th className="p-4">Tier</th>
+                    <th className="p-4">Target Requirement</th>
+                    <th className="p-4 text-amber-600">Harvest Gold</th>
+                    <th className="p-4 text-emerald-600">Harvest EXP</th>
+                    <th className="p-4">Unlock Price</th>
+                  </tr>
+                </thead>
+                <tbody className="divide-y divide-earth-beige-200 text-earth-brown-500">
+                  <tr>
+                    <td className="p-4 font-bold text-earth-brown-600">🌱 Vitality Sprout</td>
+                    <td className="p-4 text-xs font-medium uppercase tracking-wider">Tier 1</td>
+                    <td className="p-4">5 Reps / 10 Mins</td>
+                    <td className="p-4 font-semibold text-amber-600">30 Gold</td>
+                    <td className="p-4 font-semibold text-emerald-600">50 EXP</td>
+                    <td className="p-4"><span className="text-xs font-semibold px-2 py-0.5 rounded bg-earth-moss-100 text-earth-moss-600">Free</span></td>
+                  </tr>
+                  <tr>
+                    <td className="p-4 font-bold text-earth-brown-600">🌿 Life Sprout</td>
+                    <td className="p-4 text-xs font-medium uppercase tracking-wider">Tier 1</td>
+                    <td className="p-4">6 Reps / 12 Mins</td>
+                    <td className="p-4 font-semibold text-amber-600">40 Gold</td>
+                    <td className="p-4 font-semibold text-emerald-600">60 EXP</td>
+                    <td className="p-4">50 Gold</td>
+                  </tr>
+                  <tr>
+                    <td className="p-4 font-bold text-earth-brown-600">🌱 Calm Sapling</td>
+                    <td className="p-4 text-xs font-medium uppercase tracking-wider">Tier 2</td>
+                    <td className="p-4">15 Reps / 30 Mins</td>
+                    <td className="p-4 font-semibold text-amber-600">120 Gold</td>
+                    <td className="p-4 font-semibold text-emerald-600">180 EXP</td>
+                    <td className="p-4">150 Gold</td>
+                  </tr>
+                  <tr>
+                    <td className="p-4 font-bold text-earth-brown-600">🌱 Step Sapling</td>
+                    <td className="p-4 text-xs font-medium uppercase tracking-wider">Tier 2</td>
+                    <td className="p-4">20 Reps / 40 Mins</td>
+                    <td className="p-4 font-semibold text-amber-600">150 Gold</td>
+                    <td className="p-4 font-semibold text-emerald-600">220 EXP</td>
+                    <td className="p-4">200 Gold</td>
+                  </tr>
+                  <tr>
+                    <td className="p-4 font-bold text-earth-brown-600">🌳 Life Tree</td>
+                    <td className="p-4 text-xs font-medium uppercase tracking-wider">Tier 3</td>
+                    <td className="p-4">50 Reps / 100 Mins</td>
+                    <td className="p-4 font-semibold text-amber-600">450 Gold</td>
+                    <td className="p-4 font-semibold text-emerald-600">600 EXP</td>
+                    <td className="p-4">500 Gold</td>
+                  </tr>
+                  <tr>
+                    <td className="p-4 font-bold text-earth-brown-600">🌳 Calm Tree</td>
+                    <td className="p-4 text-xs font-medium uppercase tracking-wider">Tier 3</td>
+                    <td className="p-4">60 Reps / 120 Mins</td>
+                    <td className="p-4 font-semibold text-amber-600">550 Gold</td>
+                    <td className="p-4 font-semibold text-emerald-600">750 EXP</td>
+                    <td className="p-4">600 Gold</td>
+                  </tr>
+                  <tr>
+                    <td className="p-4 font-bold text-earth-brown-600">⛰️ Summit Tree</td>
+                    <td className="p-4 text-xs font-medium uppercase tracking-wider">Tier 3</td>
+                    <td className="p-4">80 Reps / 160 Mins</td>
+                    <td className="p-4 font-semibold text-amber-600">700 Gold</td>
+                    <td className="p-4 font-semibold text-emerald-600">900 EXP</td>
+                    <td className="p-4">700 Gold</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+
+          {/* Productivity Category */}
+          <div>
+            <h3 className="text-xl font-bold text-earth-brown-600 mb-4 flex items-center gap-2">
+              <span className="w-8 h-8 rounded-lg bg-blue-100 flex items-center justify-center text-sm border border-blue-200">🔵</span>
+              Productivity Pillar Plants
+            </h3>
+            <div className="overflow-x-auto rounded-2xl border border-earth-beige-200 shadow-sm bg-white">
+              <table className="w-full text-left border-collapse text-sm">
+                <thead>
+                  <tr className="bg-earth-beige-100 text-earth-brown-600 border-b border-earth-beige-200 font-semibold">
+                    <th className="p-4">Plant Name</th>
+                    <th className="p-4">Tier</th>
+                    <th className="p-4">Target Requirement</th>
+                    <th className="p-4 text-amber-600">Harvest Gold</th>
+                    <th className="p-4 text-emerald-600">Harvest EXP</th>
+                    <th className="p-4">Unlock Price</th>
+                  </tr>
+                </thead>
+                <tbody className="divide-y divide-earth-beige-200 text-earth-brown-500">
+                  <tr>
+                    <td className="p-4 font-bold text-earth-brown-600">🪨 Ore Sprout</td>
+                    <td className="p-4 text-xs font-medium uppercase tracking-wider">Tier 1</td>
+                    <td className="p-4">5 Reps / 10 Mins</td>
+                    <td className="p-4 font-semibold text-amber-600">40 Gold</td>
+                    <td className="p-4 font-semibold text-emerald-600">50 EXP</td>
+                    <td className="p-4"><span className="text-xs font-semibold px-2 py-0.5 rounded bg-earth-moss-100 text-earth-moss-600">Free</span></td>
+                  </tr>
+                  <tr>
+                    <td className="p-4 font-bold text-earth-brown-600">💎 Crystal Sprout</td>
+                    <td className="p-4 text-xs font-medium uppercase tracking-wider">Tier 1</td>
+                    <td className="p-4">7 Reps / 14 Mins</td>
+                    <td className="p-4 font-semibold text-amber-600">50 Gold</td>
+                    <td className="p-4 font-semibold text-emerald-600">70 EXP</td>
+                    <td className="p-4">60 Gold</td>
+                  </tr>
+                  <tr>
+                    <td className="p-4 font-bold text-earth-brown-600">🪨 Ore Sapling</td>
+                    <td className="p-4 text-xs font-medium uppercase tracking-wider">Tier 2</td>
+                    <td className="p-4">18 Reps / 36 Mins</td>
+                    <td className="p-4 font-semibold text-amber-600">150 Gold</td>
+                    <td className="p-4 font-semibold text-emerald-600">200 EXP</td>
+                    <td className="p-4">180 Gold</td>
+                  </tr>
+                  <tr>
+                    <td className="p-4 font-bold text-earth-brown-600">✨ Crystal Sapling</td>
+                    <td className="p-4 text-xs font-medium uppercase tracking-wider">Tier 2</td>
+                    <td className="p-4">22 Reps / 44 Mins</td>
+                    <td className="p-4 font-semibold text-amber-600">220 Gold</td>
+                    <td className="p-4 font-semibold text-emerald-600">280 EXP</td>
+                    <td className="p-4">240 Gold</td>
+                  </tr>
+                  <tr>
+                    <td className="p-4 font-bold text-earth-brown-600">⛰️ Ore Tree</td>
+                    <td className="p-4 text-xs font-medium uppercase tracking-wider">Tier 3</td>
+                    <td className="p-4">55 Reps / 110 Mins</td>
+                    <td className="p-4 font-semibold text-amber-600">500 Gold</td>
+                    <td className="p-4 font-semibold text-emerald-600">450 EXP</td>
+                    <td className="p-4">550 Gold</td>
+                  </tr>
+                  <tr>
+                    <td className="p-4 font-bold text-earth-brown-600">💎 Crystal Tree</td>
+                    <td className="p-4 text-xs font-medium uppercase tracking-wider">Tier 3</td>
+                    <td className="p-4">75 Reps / 150 Mins</td>
+                    <td className="p-4 font-semibold text-amber-600">800 Gold</td>
+                    <td className="p-4 font-semibold text-emerald-600">1000 EXP</td>
+                    <td className="p-4">750 Gold</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+
+          {/* Finance Category */}
+          <div>
+            <h3 className="text-xl font-bold text-earth-brown-600 mb-4 flex items-center gap-2">
+              <span className="w-8 h-8 rounded-lg bg-amber-100 flex items-center justify-center text-sm border border-amber-200">🟡</span>
+              Finance Pillar Plants
+            </h3>
+            <div className="overflow-x-auto rounded-2xl border border-earth-beige-200 shadow-sm bg-white">
+              <table className="w-full text-left border-collapse text-sm">
+                <thead>
+                  <tr className="bg-earth-beige-100 text-earth-brown-600 border-b border-earth-beige-200 font-semibold">
+                    <th className="p-4">Plant Name</th>
+                    <th className="p-4">Tier</th>
+                    <th className="p-4">Target Requirement</th>
+                    <th className="p-4 text-amber-600">Harvest Gold</th>
+                    <th className="p-4 text-emerald-600">Harvest EXP</th>
+                    <th className="p-4">Unlock Price</th>
+                  </tr>
+                </thead>
+                <tbody className="divide-y divide-earth-beige-200 text-earth-brown-500">
+                  <tr>
+                    <td className="p-4 font-bold text-earth-brown-600">💰 Coin Sprout</td>
+                    <td className="p-4 text-xs font-medium uppercase tracking-wider">Tier 1</td>
+                    <td className="p-4">4 Reps / 8 Mins</td>
+                    <td className="p-4 font-semibold text-amber-600">50 Gold</td>
+                    <td className="p-4 font-semibold text-emerald-600">40 EXP</td>
+                    <td className="p-4"><span className="text-xs font-semibold px-2 py-0.5 rounded bg-earth-moss-100 text-earth-moss-600">Free</span></td>
+                  </tr>
+                  <tr>
+                    <td className="p-4 font-bold text-earth-brown-600">✨ Gem Sprout</td>
+                    <td className="p-4 text-xs font-medium uppercase tracking-wider">Tier 1</td>
+                    <td className="p-4">8 Reps / 16 Mins</td>
+                    <td className="p-4 font-semibold text-amber-600">130 Gold</td>
+                    <td className="p-4 font-semibold text-emerald-600">100 EXP</td>
+                    <td className="p-4">120 Gold</td>
+                  </tr>
+                  <tr>
+                    <td className="p-4 font-bold text-earth-brown-600">💎 Diamond Sprout</td>
+                    <td className="p-4 text-xs font-medium uppercase tracking-wider">Tier 1</td>
+                    <td className="p-4">10 Reps / 20 Mins</td>
+                    <td className="p-4 font-semibold text-amber-600">200 Gold</td>
+                    <td className="p-4 font-semibold text-emerald-600">150 EXP</td>
+                    <td className="p-4">180 Gold</td>
+                  </tr>
+                  <tr>
+                    <td className="p-4 font-bold text-earth-brown-600">💰 Coin Sapling</td>
+                    <td className="p-4 text-xs font-medium uppercase tracking-wider">Tier 2</td>
+                    <td className="p-4">12 Reps / 24 Mins</td>
+                    <td className="p-4 font-semibold text-amber-600">250 Gold</td>
+                    <td className="p-4 font-semibold text-emerald-600">200 EXP</td>
+                    <td className="p-4">220 Gold</td>
+                  </tr>
+                  <tr>
+                    <td className="p-4 font-bold text-earth-brown-600">💎 Gem Sapling</td>
+                    <td className="p-4 text-xs font-medium uppercase tracking-wider">Tier 2</td>
+                    <td className="p-4">18 Reps / 36 Mins</td>
+                    <td className="p-4 font-semibold text-amber-600">400 Gold</td>
+                    <td className="p-4 font-semibold text-emerald-600">300 EXP</td>
+                    <td className="p-4">350 Gold</td>
+                  </tr>
+                  <tr>
+                    <td className="p-4 font-bold text-earth-brown-600">💎 Diamond Sapling</td>
+                    <td className="p-4 text-xs font-medium uppercase tracking-wider">Tier 2</td>
+                    <td className="p-4">22 Reps / 45 Mins</td>
+                    <td className="p-4 font-semibold text-amber-600">550 Gold</td>
+                    <td className="p-4 font-semibold text-emerald-600">400 EXP</td>
+                    <td className="p-4">450 Gold</td>
+                  </tr>
+                  <tr>
+                    <td className="p-4 font-bold text-earth-brown-600">💎 Gem Tree</td>
+                    <td className="p-4 text-xs font-medium uppercase tracking-wider">Tier 3</td>
+                    <td className="p-4">70 Reps / 140 Mins</td>
+                    <td className="p-4 font-semibold text-amber-600">1200 Gold</td>
+                    <td className="p-4 font-semibold text-emerald-600">900 EXP</td>
+                    <td className="p-4">850 Gold</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
         </div>
       </section>
     </div>
